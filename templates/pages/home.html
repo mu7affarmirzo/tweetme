@@ -6,12 +6,17 @@ this is amazing!!!!
 
 
 {% block content %}
-Welcome to Tweetme 2
 
-<div id='tweets'>
-    Loading...
+<div class='row text-center'>
+    <div class='col'>
+        <h1>Welcome to Tweetme 2</h1>
+    </div>
 </div>
 
+
+<div class='row' id='tweets'>
+    Loading...
+</div>
 <script>
 const tweetsElement = document.getElementById("tweets"); // get an html element
 // tweetsElement.innerHTML = 'Loading...' // set new html in that element
@@ -36,11 +41,11 @@ function LikeBtn(tweet){
 }
 
 function formatTweetElement(tweet) {
-    var formattedTweet = "<div class='mb-4 tweet' id='tweet-" + tweet.id
-        + "'><p>" + tweet.content +
+    var formattedTweet = "<div class='col-12 col-md-10 mx-auto border rounded py-3 mb-4 tweet' id='tweet-" + tweet.id
+    + "'><p>" + tweet.content +
         "</p><div class='btn-group'>" + LikeBtn(tweet) +
         "</div></div>";
-    return formattedTweet;
+    return formattedTweet
 }
 xhr.responseType = responseType;
 xhr.open(method, url);
